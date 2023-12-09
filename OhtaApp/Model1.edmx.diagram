@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="46ae16eb54ad44aaa6b74eb42379bed0" Name="Diagram1">
+        <EntityTypeShape EntityType="Ohta_ParkModel.Clients" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ohta_ParkModel.Employees" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ohta_ParkModel.Employees_Users" Width="1.5" PointX="10.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ohta_ParkModel.Orders" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ohta_ParkModel.Roles" Width="1.5" PointX="5.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ohta_ParkModel.Services" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ohta_ParkModel.Services_Orders" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ohta_ParkModel.Statuses" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="Ohta_ParkModel.FK__Orders__Client_C__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="Ohta_ParkModel.FK__Employees__ID_Em__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="Ohta_ParkModel.FK__Employees__ID_Ro__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="Ohta_ParkModel.FK__Orders__ID_Statu__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="Ohta_ParkModel.FK__Services___ID_Or__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="Ohta_ParkModel.FK__Services___ID_Se__49C3F6B7" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,71 @@
+﻿<Window x:Class="OhtaApp.AddClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OhtaApp"
+        mc:Ignorable="d"
+        Title="Добавить клиента" Height="550" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Resources/logo.ico" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.05*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="countDownTB" FontSize="18" FontFamily="Comic Sans MS" Height="30" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button x:Name="backButton" Width="60" Height="60" BorderBrush="Black" Click="backButton_Click" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="30"/>
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/back.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="completeButton" Width="60" Height="60" BorderBrush="#FF4E9410" Click="completeButton_Click" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="30"/>
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/complete.png"/>
+            </Button.Background>
+        </Button>
+        <TextBlock FontFamily="Comic Sans MS" FontSize="24" Text="Фамилия" Width="110"  Grid.Row="2" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="surnameTB" FontSize="24" Grid.Row="2" Grid.Column="1" Width="250" Grid.ColumnSpan="2" MaxLength="15"/>
+        <TextBlock FontFamily="Comic Sans MS" FontSize="24" Text="Код" Width="50"  Grid.Row="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="codeTB" FontSize="24" Grid.Row="1" Grid.Column="1" Width="250" Grid.ColumnSpan="2" MaxLength="10"/>
+        <TextBlock FontFamily="Comic Sans MS" FontSize="24" Text="Имя" Width="50"  Grid.Row="3" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="nameTB" FontSize="24" Grid.Row="3" Grid.Column="1" Width="250" Grid.ColumnSpan="2" MaxLength="15"/>
+        <TextBlock FontFamily="Comic Sans MS" FontSize="24" Text="Отчество" Width="110"  Grid.Row="4" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="patronymicTB" FontSize="24" Grid.Row="4" Grid.Column="1" Width="250" Grid.ColumnSpan="2" MaxLength="15"/>
+        <TextBlock FontFamily="Comic Sans MS" FontSize="24" Text="Серия паспорта" Width="185"  Grid.Row="5" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="passportSeriesTB" FontSize="24" Grid.Row="5" Grid.Column="1" Width="250" Grid.ColumnSpan="2" MaxLength="4" PreviewTextInput="pasportSeriesTB_PreviewTextInput"/>
+        <TextBlock FontFamily="Comic Sans MS" FontSize="24" Text="Номер паспорта" Width="190"  Grid.Row="6" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="passportNumberTB" FontSize="24" Grid.Row="6" Grid.Column="1" Width="250" Grid.ColumnSpan="2" MaxLength="6" PreviewTextInput="pasportNumberTB_PreviewTextInput"/>
+        <TextBlock FontFamily="Comic Sans MS" FontSize="24" Text="Дата рождения" Width="180" Grid.Row="7" Grid.ColumnSpan="2"/>
+       <DatePicker x:Name="birthdayDP" FontSize="24" Grid.Row="7" Grid.Column="1" Width="250" Grid.ColumnSpan="2" />
+        <TextBlock FontFamily="Comic Sans MS" FontSize="24" Text="Адрес" Width="70" Grid.Row="8" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="addressTB" FontSize="24" Grid.Row="8" Grid.Column="1" Width="250" Grid.ColumnSpan="2" MaxLength="100"/>
+        <TextBlock FontFamily="Comic Sans MS" FontSize="24" Text="E-mail" Width="70" Grid.Row="9" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="emailTB" FontSize="24" Grid.Row="9" Grid.Column="1" Width="250" Grid.ColumnSpan="2" MaxLength="50"/>
+        <TextBlock FontFamily="Comic Sans MS" FontSize="24" Text="Пароль" Width="90" Grid.Row="10" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="passwordTB" FontSize="24" Grid.Row="10" Grid.Column="1" Width="250" Grid.ColumnSpan="2" MaxLength="15"/>
+    </Grid>
+</Window>

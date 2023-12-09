@@ -1,0 +1,48 @@
+﻿<Window x:Class="OhtaApp.HistoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OhtaApp"
+        mc:Ignorable="d"
+        Title="История посещения" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Resources/logo.ico" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.07*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.07*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.14*"/>
+            <RowDefinition Height="0.16*"/>
+            <RowDefinition Height="0.7*"/>
+        </Grid.RowDefinitions>
+        <ListView Name="EntersLV" Grid.Row="2" Grid.RowSpan="2" VerticalAlignment="Center" Grid.ColumnSpan="3" HorizontalAlignment="Center" Width="700" Height="310" FontSize="18" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Логин" Width="250" DisplayMemberBinding="{Binding Login}"/>
+                    <GridViewColumn Header="Последний вход" Width="250" DisplayMemberBinding="{Binding Last_Login_RU}"/>
+                    <GridViewColumn Header="Успех входа" Width="250" DisplayMemberBinding="{Binding NameEnterType}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox x:Name="FilterTB" Height="40" Width="300" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="20" Grid.Row="1" TextChanged="FilterTB_TextChanged"/>
+        <ComboBox Name="DateCB" Height="40" Width="300" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="20" Grid.Row="1" Background="#FF349C3D" SelectionChanged="DateCB_SelectionChanged">
+            <ComboBoxItem Content="От старых к новым"/>
+            <ComboBoxItem Content="От новых к старым"/>
+        </ComboBox>
+        <TextBlock Text="Фильтрация по логину" Grid.Column="1" FontSize="24" FontFamily="Comic Sans MS" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBlock Text="Сортировка по дате входа" Grid.Column="1" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Right" FontFamily="Comic Sans MS" Grid.Row="1"/>
+        <TextBlock x:Name="countDownTB" FontSize="22" FontFamily="Comic Sans MS" Height="30" Width="650" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Button x:Name="backButton" Width="60" Height="60" BorderBrush="Black" Click="backButton_Click" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="30"/>
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/back.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>

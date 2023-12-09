@@ -1,0 +1,89 @@
+﻿<Window x:Class="OhtaApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OhtaApp"
+        mc:Ignorable="d"
+          Title="Охта парк" Height="450" Width="800" Icon="Resources/logo.ico" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.3*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="loginTB" Grid.Column="1" Width="375" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" MaxLength="25" Margin="16,0,0,0" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="passwordTB" Grid.Column="1" Width="375" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" FontSize="24" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="16,0,0,0" Grid.ColumnSpan="2">
+                <TextBox.Text>
+                    <Binding ElementName="passwordPB" Path="Password"/>
+                </TextBox.Text>
+            </TextBox>
+            <PasswordBox x:Name="passwordPB" Grid.Column="1" Width="375" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" FontSize="24" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" MaxLength="10" Margin="16,0,0,0" Grid.ColumnSpan="2"/>
+            <TextBlock Text="Логин:" FontFamily="Comic Sans MS" FontSize="36" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="121,0,0,0" />
+            <TextBlock Text="Пароль:" FontFamily="Comic Sans MS" FontSize="36" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="1" Margin="121,0,0,0"/>
+            <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="267">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="passwordOpenButton" Grid.Column="1" Width="50" Height="50" HorizontalAlignment="Left" BorderBrush="#FF01404F" Click="passwordOpenButton_Click" Margin="10,10,0,20" >
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="25"/>
+                        </Style>
+                    </Button.Resources>
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/passwordvision.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="passwordCloseButton" Grid.Column="1" Width="50" Height="50" HorizontalAlignment="Left" BorderBrush="#FF01404F" Click="passwordCloseButton_Click" Margin="10,10,0,20" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/closeeye.png" />
+                    </Button.Background>
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="25"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="#FF92D050" >
+            <TextBlock x:Name="timeLeftToEnterTB" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Row="1" Visibility="Hidden" FontFamily="Comic Sans MS" FontSize="18"/>
+            <TextBlock Text="Авторизация" FontFamily="Comic Sans MS" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" FontWeight="Bold"/>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="loginButton" Grid.Column="0" Grid.ColumnSpan="3" Content="ВОЙТИ" HorizontalAlignment="Center" Height="70" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Center" Width="400" Background="#FF349C3D" FontFamily="Comic Sans MS" FontSize="38" FontWeight="Bold" BorderBrush="#FFE9A33C" Click="loginbutton_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="25"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

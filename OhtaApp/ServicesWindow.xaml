@@ -1,0 +1,63 @@
+﻿<Window x:Class="OhtaApp.ServicesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OhtaApp"
+        mc:Ignorable="d"
+        Title="Оформление заказа" Height="600" Width="1200"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Resources/logo.ico" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0,2*"/>
+            <ColumnDefinition Width="0,6*"/>
+            <ColumnDefinition Width="0,4*"/>
+            <ColumnDefinition Width="0,1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="0.04*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="countDownTB" FontSize="22" FontFamily="Comic Sans MS" Height="30" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBlock Text="Поиск услуги" FontFamily="Comic Sans MS" FontSize="38" Height="60" Width="260" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="2" />
+        <TextBox x:Name="FilterTB" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="250" Height="50"  Grid.Column="1" HorizontalAlignment="Right"  FontSize="20" TextChanged="FilterTB_TextChanged" />
+        <Button x:Name="backButton" Width="60" Height="60" BorderBrush="Black" Click="backButton_Click" VerticalAlignment="Center"  HorizontalAlignment="Center" >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="30"/>
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/back.png"/>
+            </Button.Background>
+        </Button>
+        <DataGrid Name="ServicesDG" VerticalAlignment="Top" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="700" Height="350" FontSize="18" SelectionMode="Single" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False" CanUserSortColumns="False" CanUserResizeRows="False" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Код" Width="200" Binding="{Binding Code}"/>
+                <DataGridTextColumn Header="Название" Width="350" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Стоимость" Width="*" Binding="{Binding CostService}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="addOrderBttn"  Content="Оформить заказ" FontFamily="Comic Sans MS" FontSize="30" Grid.Row="1" Width="500" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="50" Background="#FF92D050" BorderBrush="#FF349C3D" Click="addOrderBttn_Click" Grid.ColumnSpan="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="25"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock Grid.Row="1" Text="Добавить услугу" Width="250" Height="40" FontSize="30" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontFamily="Comic Sans MS"/>
+        <Button x:Name="addServiceBttn" FontFamily="Comic Sans MS" FontSize="30" Grid.Row="1" Width="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="50" Click="addServiceBttn_Click" Grid.Column="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="25"/>
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/Добавить.png"/>
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="servicesTBl" Grid.Row="1" Grid.Column="2" FontSize="18" VerticalAlignment="Top" Text="Список выбранных услуг:" TextWrapping="Wrap" Height="354" />
+        <TextBlock Text="Общее время проката" FontFamily="Comic Sans MS" FontSize="28" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="2" ToolTip="Время в минутах"/>
+        <TextBox x:Name="RentalTB" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="165" Grid.Column="2" HorizontalAlignment="Center"  FontSize="20" TextChanged="FilterTB_TextChanged" ToolTip="Время пишется в минутах" MaxLength="3" PreviewTextInput="RentalTB_PreviewTextInput" Height="50"/>
+    </Grid>
+</Window>
